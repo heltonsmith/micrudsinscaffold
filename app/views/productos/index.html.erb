@@ -1,0 +1,30 @@
+
+<h1>Mostrar productos</h1>
+
+<%=link_to "CREAR NUEVO PRODUCTO", "/productos/new"%>
+
+<br /><br />
+
+<table border="1">
+
+    <tr>
+        <thead>
+            <th>Id</th>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+        </thead>
+    </tr>
+    
+    <%@productos.each do |p|%>   
+        <tr>
+            <td><%=p.id%></td>
+            <td><%=p.codigo%></td>
+            <td><%=p.nombre%></td>
+            <td><%=p.descripcion%></td>
+            <td><%=p.precio%></td>
+        </tr>
+    <%end%>
+
+</table>

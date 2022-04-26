@@ -1,0 +1,32 @@
+
+<h1>Creación de productos</h1>
+
+
+<%=form_for @productos do |f|%>
+
+<div>
+    <%=f.label :codigo%>
+    <%=f.text_field :codigo%>
+</div>
+
+<div>
+    <%=f.label :nombre%>
+    <%=f.text_field :nombre%>
+</div>
+
+<div>
+    <%=f.label :descripcion%>
+    <%=f.text_area :descripcion%>
+</div>
+
+<div>
+    <%=f.label :precio%>
+    <%=f.number_field :precio%>
+</div>
+
+<div>
+    <%=f.submit%>
+</div>
+
+
+<%end%>

@@ -1,0 +1,12 @@
+
+body{
+    background-color: rgb(186, 250, 186);
+}
+
+label{
+    font-size: 24px;
+}
+
+input, textarea{
+    margin: 10px;
+}
