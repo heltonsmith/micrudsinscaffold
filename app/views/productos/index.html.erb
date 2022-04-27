@@ -27,6 +27,7 @@
             <td><%=p.precio%></td>
             <td>
                 <%= link_to "Eliminar", p, "data-method"=>:delete %>
+                <%= link_to "Modificar", edit_producto_path(p) %>
             </td>
         </tr>
     <%end%>

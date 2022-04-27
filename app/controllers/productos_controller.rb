@@ -20,26 +20,34 @@ class ProductosController < ApplicationController
         @productos = Producto.new
     end
 
-    def create
-        @productos = Producto.new(productos_params)
+    def create   
+        @busqueda = Producto.find_by(codigo: productos_params[:codigo])
 
-        if @productos.save 
-            redirect_to "/"
+        if @busqueda.present?
+            respond_to do |format|
+                format.html { redirect_to "/productos/new", notice: "ERROR: Código duplicado" }
+            end
         else
-            render :new
+            @productos = Producto.new(productos_params)
+            if @productos.save
+                redirect_to "/"
+            else
+                render :new #redirect_to "/productos/new"
+            end
         end
+    end
 
-        #@restriccion = Producto.exists?(codigo: "111")
-        #puts @restriccion
-        #if @restriccion == false
-            #if @productos.save 
-                #redirect_to "/"
-            #else
-                #render :new
-            #end
-        #else
-            #render :new
-        #end    
+    def edit 
+        @productos = Producto.find(params[:id])
+    end
+
+    def update 
+        @productos = Producto.find(params[:id])
+        if @productos.update(productos_params)
+            redirect_to "/" #productos_path
+        else
+            render :edit
+        end
     end
 
     private 

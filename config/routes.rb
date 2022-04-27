@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   get "/productos/new", to: "productos#new"
   post "/productos", to: "productos#create"
   delete "/productos/:id", to: "productos#destroy"
+  get "/productos/:id/edit", to: "productos#edit"
+  patch "/productos/:id", to: "productos#update"
 
 end
