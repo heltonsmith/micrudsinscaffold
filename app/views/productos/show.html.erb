@@ -1,0 +1,27 @@
+
+<table border="1">
+    <tr>
+        <thead>
+            <th>Id</th>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+        </thead>
+    </tr>
+    <tr>
+        <td><%=@productos.id%></td>
+        <td><%=@productos.codigo%></td>
+        <td><%=@productos.nombre%></td>
+        <td><%=@productos.descripcion%></td>
+        <td><%=@productos.precio%></td>
+    </tr>
+</table>
+
+<br /><br />
+
+<%= link_to "Volver atrás", "/" %>
+
+<br /><br />
+
+<%= button_to "Confirmar Eliminación", @productos, method: :delete %>

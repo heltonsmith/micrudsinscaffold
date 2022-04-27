@@ -14,6 +14,7 @@
             <th>Nombre</th>
             <th>Descripción</th>
             <th>Precio</th>
+            <th>ACCIÓN</th>
         </thead>
     </tr>
     
@@ -24,6 +25,9 @@
             <td><%=p.nombre%></td>
             <td><%=p.descripcion%></td>
             <td><%=p.precio%></td>
+            <td>
+                <%= link_to "Eliminar", p, "data-method"=>:delete %>
+            </td>
         </tr>
     <%end%>
 

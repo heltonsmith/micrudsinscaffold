@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   get "/", to: "productos#index"
   get "/productos/new", to: "productos#new"
   post "/productos", to: "productos#create"
+  delete "/productos/:id", to: "productos#destroy"
 
 end
